@@ -12,11 +12,11 @@ import javax.inject.Singleton
  * Created by costular on 16/03/2018.
  */
 @Module
-class ApplicationModule(private val application: MainApp) {
-
+class ApplicationModule(private val application: Application) {
+/*
     @Provides
     @Singleton
-    fun provideApp(): Application = application
+    fun provideApp(): Application = application*/
 
     @Provides
     @Singleton

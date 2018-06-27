@@ -22,7 +22,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class HeroesListActivityTest {
 
-    val activityTestRule = ActivityTestRule<HeroesListActivity>(HeroesListActivity::class.java)
+    /*val activityTestRule = ActivityTestRule<HeroesListActivity>(HeroesListActivity::class.java)
 
     @Test
     fun testBasicInitialization() {
@@ -46,6 +46,6 @@ class HeroesListActivityTest {
         intended(hasComponent(MarvelHeroeDetailActivity::class.java.name))
 
         Intents.release()
-    }
+    }*/
 
 }

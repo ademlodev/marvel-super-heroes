@@ -1,12 +1,10 @@
 package com.costular.marvelheroes.presentation.heroeslist
 
-import android.app.VoiceInteractor
 import android.content.Context
 import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
 import android.support.v7.graphics.Palette
 import android.support.v7.widget.RecyclerView
-import android.util.Log
+import android.support.v7.recyclerview.extensions.ListAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +18,7 @@ import com.costular.marvelheroes.R
 import com.costular.marvelheroes.domain.model.MarvelHeroEntity
 import kotlinx.android.synthetic.main.item_hero.view.*
 
-        /**
+/**
  * Created by costular on 17/03/2018.
  */
 typealias Click = (MarvelHeroEntity, ImageView) -> Unit
@@ -43,16 +41,23 @@ class HeroesListAdapter(val clickListener: Click):  RecyclerView.Adapter<HeroesL
 
     override fun onBindViewHolder(holder: HeroesViewHolder, position: Int) = holder.bind(data[position])
 
-    fun swapData(data: List<MarvelHeroEntity>) {
+    /*fun swapData(data: List<MarvelHeroEntity>) {
         this.data.clear()
         this.data.addAll(data)
         notifyDataSetChanged()
-    }
+    }*/
 
-    fun clear() {
+    /*fun clear() {
         this.data.clear()
         notifyDataSetChanged()
+    }*/
+
+    fun submitList(items: List<MarvelHeroEntity>) {
+        this.data.addAll(items)
+        notifyDataSetChanged()
     }
+
+
 
     inner class HeroesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: MarvelHeroEntity) = with(itemView) {
