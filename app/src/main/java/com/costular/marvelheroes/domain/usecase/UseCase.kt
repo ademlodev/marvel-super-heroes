@@ -1,5 +1,6 @@
 package com.costular.marvelheroes.domain.usecase
 
+import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -13,7 +14,7 @@ abstract class UseCase<T> {
 
     internal val disposables = CompositeDisposable()
 
-    abstract fun buildCase(): Observable<T>
+    abstract fun buildCase(): Flowable<T>
 
     fun execute(onSuccess: (value: T) -> Unit, onError: (t: Throwable) -> Unit = {}) {
         buildCase()

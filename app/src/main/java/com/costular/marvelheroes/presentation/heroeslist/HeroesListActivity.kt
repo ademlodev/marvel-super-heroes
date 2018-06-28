@@ -65,19 +65,24 @@ class HeroesListActivity : AppCompatActivity() {
                 onHeroListLoaded(heroList)
             }
         })
+
+        heroesViewModel.isLoadingState.observe(this, Observer { isLoading ->
+            isLoading?.let {
+                showLoading(it)
+            }
+        })
     }
 
     private fun onHeroListLoaded(heroList: List<MarvelHeroEntity>){
         adapter.submitList(heroList)
     }
 
-    private fun goToHeroDetail(hero: MarvelHeroEntity, image: View) {
-        navigator.goToHeroDetail(this, hero, image)
+    private fun showLoading(isLoading: Boolean) {
+        heroesListLoading.visibility = if(isLoading) View.VISIBLE else View.GONE
     }
 
-    override fun onDestroy() {
-        //presenter.destroy()
-        super.onDestroy()
+    private fun goToHeroDetail(hero: MarvelHeroEntity, image: View) {
+        navigator.goToHeroDetail(this, hero, image)
     }
 
 }

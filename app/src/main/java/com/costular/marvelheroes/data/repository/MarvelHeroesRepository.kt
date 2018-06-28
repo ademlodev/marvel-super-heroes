@@ -1,6 +1,7 @@
 package com.costular.marvelheroes.data.repository
 
 import com.costular.marvelheroes.domain.model.MarvelHeroEntity
+import io.reactivex.Flowable
 import io.reactivex.Observable
 
 /**
@@ -8,6 +9,6 @@ import io.reactivex.Observable
  */
 interface MarvelHeroesRepository {
 
-    fun getMarvelHeroesList(): Observable<List<MarvelHeroEntity>>
+    fun getMarvelHeroesList(): Flowable<List<MarvelHeroEntity>>
 
 }

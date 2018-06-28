@@ -9,7 +9,7 @@ import com.costular.marvelheroes.domain.model.MarvelHeroEntity
 class MarvelHeroMapper : Mapper<MarvelHero, MarvelHeroEntity> {
 
     override fun transform(input: MarvelHero): MarvelHeroEntity =
-            MarvelHeroEntity(
+            MarvelHeroEntity(0,
                     input.name,
                     input.photoUrl,
                     input.realName,

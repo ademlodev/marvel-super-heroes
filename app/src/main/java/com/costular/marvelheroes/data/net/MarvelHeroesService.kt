@@ -1,7 +1,9 @@
 package com.costular.marvelheroes.data.net
 
 import com.costular.marvelheroes.data.model.MarvelHeroesResponse
+import io.reactivex.Flowable
 import io.reactivex.Observable
+import org.intellij.lang.annotations.Flow
 import retrofit2.http.GET
 
 /**
@@ -10,6 +12,6 @@ import retrofit2.http.GET
 interface MarvelHeroesService {
 
     @GET(".")
-    fun getMarvelHeroesList(): Observable<MarvelHeroesResponse>
+    fun getMarvelHeroesList(): Flowable<MarvelHeroesResponse>
 
 }
