@@ -23,7 +23,7 @@ class MainApp : Application() {
     override fun onCreate() {
         super.onCreate()
         Stetho.initializeWithDefaults(this)
-
+//        this.deleteDatabase("marvelhero.db")
         // DI
         component =
                 DaggerApplicationComponent.builder()

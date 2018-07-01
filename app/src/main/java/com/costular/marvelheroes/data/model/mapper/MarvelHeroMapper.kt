@@ -9,14 +9,15 @@ import com.costular.marvelheroes.domain.model.MarvelHeroEntity
 class MarvelHeroMapper : Mapper<MarvelHero, MarvelHeroEntity> {
 
     override fun transform(input: MarvelHero): MarvelHeroEntity =
-            MarvelHeroEntity(0,
+            MarvelHeroEntity(
                     input.name,
                     input.photoUrl,
                     input.realName,
                     input.height,
                     input.power,
                     input.abilities,
-                    getGroupsFromMarvelHero(input))
+                    getGroupsFromMarvelHero(input),
+                    input.favorite)
 
     override fun transformList(inputList: List<MarvelHero>): List<MarvelHeroEntity> =
             inputList.map { transform(it) }

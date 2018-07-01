@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/movie_container"
     android:layout_width="match_parent"
@@ -23,5 +24,16 @@
         tools:text="Iron Man"
         android:layout_gravity="bottom"
         style="@style/HeroTitle" />
+
+    <ImageView
+        android:id="@+id/heartView"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:paddingBottom="8dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        app:srcCompat="@drawable/heart_white" />
+
 
 </FrameLayout>

@@ -41,11 +41,11 @@ class HeroesListAdapter(val clickListener: Click):  RecyclerView.Adapter<HeroesL
 
     override fun onBindViewHolder(holder: HeroesViewHolder, position: Int) = holder.bind(data[position])
 
-    /*fun swapData(data: List<MarvelHeroEntity>) {
+    fun swapData(data: List<MarvelHeroEntity>) {
         this.data.clear()
         this.data.addAll(data)
         notifyDataSetChanged()
-    }*/
+    }
 
     /*fun clear() {
         this.data.clear()
@@ -56,8 +56,6 @@ class HeroesListAdapter(val clickListener: Click):  RecyclerView.Adapter<HeroesL
         this.data.addAll(items)
         notifyDataSetChanged()
     }
-
-
 
     inner class HeroesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: MarvelHeroEntity) = with(itemView) {
@@ -78,6 +76,11 @@ class HeroesListAdapter(val clickListener: Click):  RecyclerView.Adapter<HeroesL
                         .into(heroImage)
 
                 heroTitle.text = item.name
+                heartView.setImageResource(when(item.favourite) {
+                    true -> R.drawable.heart_red
+                    false -> R.drawable.heart_white
+                })
+
                 setOnClickListener { clickListener(item, heroImage) }
             }
         }

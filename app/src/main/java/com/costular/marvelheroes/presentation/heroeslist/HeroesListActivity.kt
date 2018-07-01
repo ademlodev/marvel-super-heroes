@@ -13,6 +13,7 @@ import com.costular.marvelheroes.R
 import com.costular.marvelheroes.domain.model.MarvelHeroEntity
 import com.costular.marvelheroes.presentation.MainApp
 import com.costular.marvelheroes.presentation.util.Navigator
+import com.costular.marvelheroes.presentation.util.SettingsManager
 import dagger.Provides
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
@@ -34,6 +35,11 @@ class HeroesListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setUp()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        heroesViewModel.loadMarvelHeroes()
     }
 
     fun inject() {
@@ -74,7 +80,8 @@ class HeroesListActivity : AppCompatActivity() {
     }
 
     private fun onHeroListLoaded(heroList: List<MarvelHeroEntity>){
-        adapter.submitList(heroList)
+        //adapter.submitList(heroList)
+        adapter.swapData(heroList)
     }
 
     private fun showLoading(isLoading: Boolean) {

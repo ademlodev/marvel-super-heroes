@@ -32,7 +32,7 @@ class HeroesListViewModel @Inject constructor(
                         marvelListState.value = it
                     },
                     onError = {
-                        Log.d("MarvelViewModel", it.toString())
+                        Log.d("MarvelListViewModel", it.toString())
                     },
                     onComplete = {
                         settingsManager.firstLoad = false

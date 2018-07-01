@@ -11,5 +11,6 @@ import io.reactivex.Observable
 interface MarvelHeroesDataSource {
 
     fun getMarvelHeroesList(): Flowable<List<MarvelHeroEntity>>
+    /*fun updateMarvelHero(marvelHeroEntity: MarvelHeroEntity): Observable<Int>*/
 
 }
